@@ -40,8 +40,14 @@ namespace Ember
             this.desktopBtn = new System.Windows.Forms.Button();
             this.leftTitle = new System.Windows.Forms.Label();
             this.infoPanel = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.fileTree = new System.Windows.Forms.TreeView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.searchBox = new System.Windows.Forms.TextBox();
             this.leftBar.SuspendLayout();
+            this.infoPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -70,61 +76,99 @@ namespace Ember
             // videosBtn
             // 
             this.videosBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.videosBtn.Location = new System.Drawing.Point(20, 408);
+            this.videosBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            this.videosBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            this.videosBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            this.videosBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.videosBtn.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.videosBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.videosBtn.Location = new System.Drawing.Point(20, 373);
             this.videosBtn.Name = "videosBtn";
-            this.videosBtn.Size = new System.Drawing.Size(163, 29);
+            this.videosBtn.Size = new System.Drawing.Size(164, 32);
             this.videosBtn.TabIndex = 5;
-            this.videosBtn.Text = "Video";
+            this.videosBtn.Text = "Video    ";
+            this.videosBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.videosBtn.UseVisualStyleBackColor = true;
             // 
             // musicBtn
             // 
             this.musicBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.musicBtn.Location = new System.Drawing.Point(20, 332);
+            this.musicBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            this.musicBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            this.musicBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            this.musicBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            this.musicBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.musicBtn.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.musicBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.musicBtn.Location = new System.Drawing.Point(20, 319);
             this.musicBtn.Name = "musicBtn";
-            this.musicBtn.Size = new System.Drawing.Size(163, 37);
+            this.musicBtn.Size = new System.Drawing.Size(164, 32);
             this.musicBtn.TabIndex = 4;
-            this.musicBtn.Text = "Music";
-            this.musicBtn.UseVisualStyleBackColor = true;
+            this.musicBtn.Text = "Music    ";
+            this.musicBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.musicBtn.UseVisualStyleBackColor = false;
             // 
             // documentsBtn
             // 
             this.documentsBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.documentsBtn.Location = new System.Drawing.Point(20, 268);
+            this.documentsBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            this.documentsBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            this.documentsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            this.documentsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.documentsBtn.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.documentsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.documentsBtn.Location = new System.Drawing.Point(20, 266);
             this.documentsBtn.Name = "documentsBtn";
-            this.documentsBtn.Size = new System.Drawing.Size(162, 31);
+            this.documentsBtn.Size = new System.Drawing.Size(164, 32);
             this.documentsBtn.TabIndex = 3;
-            this.documentsBtn.Text = "Documents";
+            this.documentsBtn.Text = "Documents    ";
+            this.documentsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.documentsBtn.UseVisualStyleBackColor = true;
             // 
             // imagesBtn
             // 
             this.imagesBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.imagesBtn.Location = new System.Drawing.Point(20, 202);
+            this.imagesBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            this.imagesBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            this.imagesBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            this.imagesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.imagesBtn.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imagesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.imagesBtn.Location = new System.Drawing.Point(18, 214);
             this.imagesBtn.Name = "imagesBtn";
-            this.imagesBtn.Size = new System.Drawing.Size(162, 31);
+            this.imagesBtn.Size = new System.Drawing.Size(162, 32);
             this.imagesBtn.TabIndex = 2;
-            this.imagesBtn.Text = "Images";
+            this.imagesBtn.Text = "Images    ";
+            this.imagesBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.imagesBtn.UseVisualStyleBackColor = true;
             // 
             // desktopBtn
             // 
             this.desktopBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.desktopBtn.Location = new System.Drawing.Point(18, 141);
+            this.desktopBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            this.desktopBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.desktopBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            this.desktopBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            this.desktopBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            this.desktopBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.desktopBtn.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.desktopBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.desktopBtn.Location = new System.Drawing.Point(18, 163);
             this.desktopBtn.Name = "desktopBtn";
             this.desktopBtn.Size = new System.Drawing.Size(164, 32);
             this.desktopBtn.TabIndex = 1;
-            this.desktopBtn.Text = "Desktop";
-            this.desktopBtn.UseVisualStyleBackColor = true;
+            this.desktopBtn.Text = "Desktop    ";
+            this.desktopBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.desktopBtn.UseVisualStyleBackColor = false;
             // 
             // leftTitle
             // 
             this.leftTitle.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.leftTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(97)))), ((int)(((byte)(0)))));
             this.leftTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.leftTitle.Location = new System.Drawing.Point(12, 9);
+            this.leftTitle.Location = new System.Drawing.Point(0, 0);
             this.leftTitle.Name = "leftTitle";
-            this.leftTitle.Size = new System.Drawing.Size(171, 33);
+            this.leftTitle.Size = new System.Drawing.Size(182, 33);
             this.leftTitle.TabIndex = 0;
             this.leftTitle.Text = "Shortcuts       ";
             this.leftTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -133,20 +177,62 @@ namespace Ember
             // 
             this.infoPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.infoPanel.BackColor = System.Drawing.Color.Transparent;
+            this.infoPanel.Controls.Add(this.label3);
+            this.infoPanel.Controls.Add(this.label2);
             this.infoPanel.Location = new System.Drawing.Point(12, 572);
             this.infoPanel.Name = "infoPanel";
             this.infoPanel.Size = new System.Drawing.Size(1026, 36);
             this.infoPanel.TabIndex = 1;
             this.infoPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(59, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 25);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "3";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(11, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "size:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // fileTree
             // 
             this.fileTree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.fileTree.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
-            this.fileTree.Location = new System.Drawing.Point(210, 12);
+            this.fileTree.Location = new System.Drawing.Point(210, 53);
             this.fileTree.Name = "fileTree";
-            this.fileTree.Size = new System.Drawing.Size(827, 554);
+            this.fileTree.Size = new System.Drawing.Size(827, 513);
             this.fileTree.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.searchBox);
+            this.panel1.Location = new System.Drawing.Point(210, 15);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(826, 29);
+            this.panel1.TabIndex = 3;
+            // 
+            // searchBox
+            // 
+            this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchBox.Location = new System.Drawing.Point(420, 3);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(0);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(406, 13);
+            this.searchBox.TabIndex = 0;
+            this.searchBox.Text = "Search";
+            this.searchBox.WordWrap = false;
             // 
             // Main
             // 
@@ -154,6 +240,7 @@ namespace Ember
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
             this.ClientSize = new System.Drawing.Size(1050, 608);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.fileTree);
             this.Controls.Add(this.infoPanel);
             this.Controls.Add(this.leftBar);
@@ -162,8 +249,18 @@ namespace Ember
             this.Text = "Ember Filemanager";
             this.Load += new System.EventHandler(this.Main_Load);
             this.leftBar.ResumeLayout(false);
+            this.infoPanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox searchBox;
+
+        private System.Windows.Forms.Label label3;
+
+        private System.Windows.Forms.Label label2;
 
         private System.Windows.Forms.TreeView fileTree;
 

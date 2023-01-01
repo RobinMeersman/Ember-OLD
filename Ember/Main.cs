@@ -37,5 +37,12 @@ namespace Ember
                 Color.Transparent, 0, ButtonBorderStyle.None
             );
         }
+
+        private void searchBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter) return;
+            
+            // todo
+        }
     }
 }
