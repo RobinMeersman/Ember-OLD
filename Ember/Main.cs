@@ -8,8 +8,11 @@ namespace Ember
 {
     public partial class Main : Form
     {
+
+        private ToolTip tp;
         public Main()
         {
+            tp = new ToolTip();
             InitializeComponent();
         }
 
@@ -21,6 +24,7 @@ namespace Ember
             Properties.Settings.Default.music = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
             Properties.Settings.Default.videos = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos);
             Properties.Settings.Default.desktop = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+            sizeL.Text = "";
         }
 
         private void leftBar_Paint(object sender, PaintEventArgs e)
@@ -86,36 +90,34 @@ namespace Ember
             if (start.GetDirectories().Length == 0 && start.GetFiles().Length == 0) return;
             if (start.GetDirectories().Length != 0)
             {
-                directories(root, start);
+                DirectoriesLoader(root, start);
             }
 
             if (start.GetFiles().Length != 0)
             {
-                files(root, start);
+                Files(root, start);
             }
 
             fileTree.Nodes.Add(root);
             root.Expand();
         }
 
-        private void directories(TreeNode root, DirectoryInfo start) 
+        private void DirectoriesLoader(TreeNode root, DirectoryInfo start) 
         {
             foreach (DirectoryInfo dir in start.GetDirectories())
             {
                 TreeNode node = new TreeNode(dir.Name);
+                node.Tag = dir;
                 try
                 {
-                    if ((dir.Attributes & FileAttributes.NotContentIndexed) != FileAttributes.NotContentIndexed)
+                    if ((dir.Attributes & FileAttributes.NotContentIndexed) != FileAttributes.NotContentIndexed) // onzichtbaar, niet geindexeerde folder
                     {
-                        directories(node, dir);
+                        DirectoriesLoader(node, dir);
                         foreach (FileInfo f in dir.GetFiles())
                         {
-                            node.Nodes.Add(f.Name);
-                        }
-                        
-                        foreach (FileInfo file in dir.GetFiles())
-                        {
-                            node.Nodes.Add(file.Name);
+                            TreeNode t = new TreeNode(f.Name);
+                            t.Tag = f;
+                            node.Nodes.Add(t);
                         }
                     }
                 }
@@ -126,11 +128,41 @@ namespace Ember
                 root.Nodes.Add(node);
             }
         }
-        private void files(TreeNode root, DirectoryInfo start) 
+        private void Files(TreeNode root, DirectoryInfo start) 
         {
             foreach (FileInfo file in start.GetFiles())
             {
                 root.Nodes.Add(new TreeNode(file.Name));
+            }
+        }
+
+        private void fileTree_AfterSelect(object sender, TreeViewEventArgs e) // TODO: ERROR
+        {
+            TreeNode selected = fileTree.SelectedNode;
+            if (selected.Nodes.Count > 0)
+            {
+                DirectoryInfo dir = (DirectoryInfo)selected.Tag;
+                sizeL.Text = dir.EnumerateFiles().Sum(f => f.Length).ToString();
+                return;
+            }
+            FileInfo fInfo = (FileInfo)selected.Tag;
+            sizeL.Text = fInfo.Length.ToString();
+        }
+
+        private void fileTree_NodeMouseHover(object sender, TreeNodeMouseHoverEventArgs e)
+        {
+            TreeNode selected = fileTree.GetNodeAt(fileTree.PointToClient(Cursor.Position));
+            if (selected == null) return;
+            
+            if (selected.Tag is FileInfo)
+            {
+                FileInfo f = (FileInfo)selected.Tag;
+                tp.SetToolTip(fileTree, f.FullName);
+            }
+            else
+            {
+                DirectoryInfo d = (DirectoryInfo)selected.Tag;
+                tp.SetToolTip(fileTree, d.FullName);
             }
         }
     }
