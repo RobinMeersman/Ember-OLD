@@ -25,6 +25,8 @@ namespace Ember
             Properties.Settings.Default.videos = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos);
             Properties.Settings.Default.desktop = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
             sizeL.Text = "";
+            sizeL.AutoSize = true;
+
         }
 
         private void leftBar_Paint(object sender, PaintEventArgs e)
@@ -95,7 +97,7 @@ namespace Ember
 
             if (start.GetFiles().Length != 0)
             {
-                Files(root, start);
+                ProcessFiles(root, start);
             }
 
             fileTree.Nodes.Add(root);
@@ -128,15 +130,17 @@ namespace Ember
                 root.Nodes.Add(node);
             }
         }
-        private void Files(TreeNode root, DirectoryInfo start) 
+        private void ProcessFiles(TreeNode root, DirectoryInfo start) 
         {
             foreach (FileInfo file in start.GetFiles())
             {
-                root.Nodes.Add(new TreeNode(file.Name));
+                TreeNode node = new TreeNode(file.Name);
+                node.Tag = file;
+                root.Nodes.Add(node);
             }
         }
 
-        private void fileTree_AfterSelect(object sender, TreeViewEventArgs e) // TODO: ERROR
+        private void fileTree_AfterSelect(object sender, TreeViewEventArgs e)
         {
             TreeNode selected = fileTree.SelectedNode;
             if (selected.Nodes.Count > 0)
@@ -148,22 +152,23 @@ namespace Ember
             FileInfo fInfo = (FileInfo)selected.Tag;
             sizeL.Text = fInfo.Length.ToString();
         }
-
+        
+        // todo: fix timing: becomes visible way to fast
         private void fileTree_NodeMouseHover(object sender, TreeNodeMouseHoverEventArgs e)
         {
-            TreeNode selected = fileTree.GetNodeAt(fileTree.PointToClient(Cursor.Position));
-            if (selected == null) return;
-            
-            if (selected.Tag is FileInfo)
-            {
-                FileInfo f = (FileInfo)selected.Tag;
-                tp.SetToolTip(fileTree, f.FullName);
-            }
-            else
-            {
-                DirectoryInfo d = (DirectoryInfo)selected.Tag;
-                tp.SetToolTip(fileTree, d.FullName);
-            }
+            // TreeNode selected = fileTree.GetNodeAt(fileTree.PointToClient(Cursor.Position));
+            // if (selected == null) return;
+            //
+            // if (selected.Tag is FileInfo)
+            // {
+            //     FileInfo f = (FileInfo)selected.Tag;
+            //     tp.SetToolTip(fileTree, f.FullName);
+            // }
+            // else
+            // {
+            //     DirectoryInfo d = (DirectoryInfo)selected.Tag;
+            //     tp.SetToolTip(fileTree, d.FullName);
+            // }
         }
     }
 }

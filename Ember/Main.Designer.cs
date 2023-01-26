@@ -40,11 +40,11 @@ namespace Ember
             this.desktopBtn = new System.Windows.Forms.Button();
             this.leftTitle = new System.Windows.Forms.Label();
             this.infoPanel = new System.Windows.Forms.Panel();
-            this.sizeL = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.fileTree = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.searchBox = new System.Windows.Forms.TextBox();
+            this.sizeL = new System.Windows.Forms.Label();
             this.leftBar.SuspendLayout();
             this.infoPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -185,15 +185,6 @@ namespace Ember
             this.infoPanel.TabIndex = 1;
             this.infoPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // sizeL
-            // 
-            this.sizeL.Location = new System.Drawing.Point(59, 5);
-            this.sizeL.Name = "sizeL";
-            this.sizeL.Size = new System.Drawing.Size(42, 25);
-            this.sizeL.TabIndex = 1;
-            this.sizeL.Text = "3";
-            this.sizeL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -235,6 +226,15 @@ namespace Ember
             this.searchBox.TabIndex = 0;
             this.searchBox.Text = "Search";
             this.searchBox.WordWrap = false;
+            // 
+            // sizeL
+            // 
+            this.sizeL.Location = new System.Drawing.Point(59, 5);
+            this.sizeL.Name = "sizeL";
+            this.sizeL.Size = new System.Drawing.Size(133, 25);
+            this.sizeL.TabIndex = 1;
+            this.sizeL.Text = "3";
+            this.sizeL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Main
             // 
