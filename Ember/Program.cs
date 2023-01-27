@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ember
@@ -16,6 +13,11 @@ namespace Ember
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Properties.Settings.Default.images = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            Properties.Settings.Default.documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            Properties.Settings.Default.music = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
+            Properties.Settings.Default.videos = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos);
+            Properties.Settings.Default.desktop = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
             Application.Run(new Main());
         }
     }

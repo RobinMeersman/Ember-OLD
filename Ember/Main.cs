@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -10,23 +11,32 @@ namespace Ember
     {
 
         private ToolTip tp;
+        private Dictionary<Button, string> paths;
         public Main()
         {
             tp = new ToolTip();
             InitializeComponent();
+            paths = new Dictionary<Button, string>();
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
             StartPosition = FormStartPosition.CenterScreen;
-            Properties.Settings.Default.images = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-            Properties.Settings.Default.documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            Properties.Settings.Default.music = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
-            Properties.Settings.Default.videos = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos);
-            Properties.Settings.Default.desktop = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
             sizeL.Text = "";
             sizeL.AutoSize = true;
 
+            paths[desktopBtn] = Properties.Settings.Default.desktop;
+            paths[imagesBtn] = Properties.Settings.Default.images;
+            paths[musicBtn] = Properties.Settings.Default.music;
+            paths[videosBtn] = Properties.Settings.Default.videos;
+            paths[documentsBtn] = Properties.Settings.Default.documents;
+        }
+
+        private void ClickHandler(object sender, EventArgs e)
+        {
+            fileTree.Nodes.Clear();
+            Button btn = sender as Button;
+            fileTree.Nodes.Add(FileTreeHandler.LoadFileTree(paths[btn]));
         }
 
         private void leftBar_Paint(object sender, PaintEventArgs e)
@@ -55,88 +65,7 @@ namespace Ember
         {
             if (e.KeyCode == Keys.Enter)
             {
-                // todo
-            }
-        }
-
-        private void desktopBtn_Click(object sender, EventArgs e)
-        {
-            LoadFileTree(Properties.Settings.Default.desktop);
-        }
-
-        private void imagesBtn_Click(object sender, EventArgs e)
-        {
-            LoadFileTree(Properties.Settings.Default.images);
-        }
-
-        private void documentsBtn_Click(object sender, EventArgs e)
-        {
-            LoadFileTree(Properties.Settings.Default.documents);
-        }
-
-        private void musicBtn_Click(object sender, EventArgs e)
-        {
-            LoadFileTree(Properties.Settings.Default.music);
-        }
-
-        private void videosBtn_Click(object sender, EventArgs e)
-        {
-            LoadFileTree(Properties.Settings.Default.videos);
-        }
-
-        private void LoadFileTree(string path)
-        {
-            fileTree.Nodes.Clear();
-            DirectoryInfo start = new DirectoryInfo(path);
-            TreeNode root = new TreeNode(start.Name);
-            if (start.GetDirectories().Length == 0 && start.GetFiles().Length == 0) return;
-            if (start.GetDirectories().Length != 0)
-            {
-                DirectoriesLoader(root, start);
-            }
-
-            if (start.GetFiles().Length != 0)
-            {
-                ProcessFiles(root, start);
-            }
-
-            fileTree.Nodes.Add(root);
-            root.Expand();
-        }
-
-        private void DirectoriesLoader(TreeNode root, DirectoryInfo start) 
-        {
-            foreach (DirectoryInfo dir in start.GetDirectories())
-            {
-                TreeNode node = new TreeNode(dir.Name);
-                node.Tag = dir;
-                try
-                {
-                    if ((dir.Attributes & FileAttributes.NotContentIndexed) != FileAttributes.NotContentIndexed) // onzichtbaar, niet geindexeerde folder
-                    {
-                        DirectoriesLoader(node, dir);
-                        foreach (FileInfo f in dir.GetFiles())
-                        {
-                            TreeNode t = new TreeNode(f.Name);
-                            t.Tag = f;
-                            node.Nodes.Add(t);
-                        }
-                    }
-                }
-                catch (UnauthorizedAccessException ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                root.Nodes.Add(node);
-            }
-        }
-        private void ProcessFiles(TreeNode root, DirectoryInfo start) 
-        {
-            foreach (FileInfo file in start.GetFiles())
-            {
-                TreeNode node = new TreeNode(file.Name);
-                node.Tag = file;
-                root.Nodes.Add(node);
+                // todo: implement
             }
         }
 
@@ -153,7 +82,7 @@ namespace Ember
             sizeL.Text = fInfo.Length.ToString();
         }
         
-        // todo: fix timing: becomes visible way to fast
+        // todo: fix timing: becomes visible way to fast (low priority)
         private void fileTree_NodeMouseHover(object sender, TreeNodeMouseHoverEventArgs e)
         {
             // TreeNode selected = fileTree.GetNodeAt(fileTree.PointToClient(Cursor.Position));
@@ -169,6 +98,11 @@ namespace Ember
             //     DirectoryInfo d = (DirectoryInfo)selected.Tag;
             //     tp.SetToolTip(fileTree, d.FullName);
             // }
+        }
+
+        private void fileTree_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Right) return;
         }
     }
 }

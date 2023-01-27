@@ -40,11 +40,11 @@ namespace Ember
             this.desktopBtn = new System.Windows.Forms.Button();
             this.leftTitle = new System.Windows.Forms.Label();
             this.infoPanel = new System.Windows.Forms.Panel();
+            this.sizeL = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.fileTree = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.searchBox = new System.Windows.Forms.TextBox();
-            this.sizeL = new System.Windows.Forms.Label();
             this.leftBar.SuspendLayout();
             this.infoPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -88,7 +88,7 @@ namespace Ember
             this.videosBtn.TabIndex = 5;
             this.videosBtn.Text = "Video    ";
             this.videosBtn.UseVisualStyleBackColor = true;
-            this.videosBtn.Click += new System.EventHandler(this.videosBtn_Click);
+            this.videosBtn.Click += new System.EventHandler(this.ClickHandler);
             // 
             // musicBtn
             // 
@@ -106,7 +106,7 @@ namespace Ember
             this.musicBtn.TabIndex = 4;
             this.musicBtn.Text = "Music    ";
             this.musicBtn.UseVisualStyleBackColor = false;
-            this.musicBtn.Click += new System.EventHandler(this.musicBtn_Click);
+            this.musicBtn.Click += new System.EventHandler(this.ClickHandler);
             // 
             // documentsBtn
             // 
@@ -123,7 +123,7 @@ namespace Ember
             this.documentsBtn.TabIndex = 3;
             this.documentsBtn.Text = "Documents    ";
             this.documentsBtn.UseVisualStyleBackColor = true;
-            this.documentsBtn.Click += new System.EventHandler(this.documentsBtn_Click);
+            this.documentsBtn.Click += new System.EventHandler(this.ClickHandler);
             // 
             // imagesBtn
             // 
@@ -140,7 +140,7 @@ namespace Ember
             this.imagesBtn.TabIndex = 2;
             this.imagesBtn.Text = "Images    ";
             this.imagesBtn.UseVisualStyleBackColor = true;
-            this.imagesBtn.Click += new System.EventHandler(this.imagesBtn_Click);
+            this.imagesBtn.Click += new System.EventHandler(this.ClickHandler);
             // 
             // desktopBtn
             // 
@@ -159,7 +159,7 @@ namespace Ember
             this.desktopBtn.TabIndex = 1;
             this.desktopBtn.Text = "Desktop    ";
             this.desktopBtn.UseVisualStyleBackColor = false;
-            this.desktopBtn.Click += new System.EventHandler(this.desktopBtn_Click);
+            this.desktopBtn.Click += new System.EventHandler(this.ClickHandler);
             // 
             // leftTitle
             // 
@@ -185,6 +185,15 @@ namespace Ember
             this.infoPanel.TabIndex = 1;
             this.infoPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // sizeL
+            // 
+            this.sizeL.Location = new System.Drawing.Point(59, 5);
+            this.sizeL.Name = "sizeL";
+            this.sizeL.Size = new System.Drawing.Size(133, 25);
+            this.sizeL.TabIndex = 1;
+            this.sizeL.Text = "3";
+            this.sizeL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,6 +214,7 @@ namespace Ember
             this.fileTree.TabIndex = 2;
             this.fileTree.NodeMouseHover += new System.Windows.Forms.TreeNodeMouseHoverEventHandler(this.fileTree_NodeMouseHover);
             this.fileTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.fileTree_AfterSelect);
+            this.fileTree.MouseClick += new System.Windows.Forms.MouseEventHandler(this.fileTree_MouseClick);
             // 
             // panel1
             // 
@@ -226,15 +236,6 @@ namespace Ember
             this.searchBox.TabIndex = 0;
             this.searchBox.Text = "Search";
             this.searchBox.WordWrap = false;
-            // 
-            // sizeL
-            // 
-            this.sizeL.Location = new System.Drawing.Point(59, 5);
-            this.sizeL.Name = "sizeL";
-            this.sizeL.Size = new System.Drawing.Size(133, 25);
-            this.sizeL.TabIndex = 1;
-            this.sizeL.Text = "3";
-            this.sizeL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Main
             // 
