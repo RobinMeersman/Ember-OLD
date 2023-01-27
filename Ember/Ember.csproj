@@ -47,6 +47,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="FileTreeHandler\FileTreeBuilder.cs" />
+        <Compile Include="FileTreeHandler\FileTreeSearcher.cs" />
         <Compile Include="Main.cs">
           <SubType>Form</SubType>
         </Compile>
@@ -82,6 +83,12 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include="dev\wanted_features.txt" />
+      <Content Include="docs\extra\classes.md" />
+      <Content Include="docs\extra\classes\builder.md" />
+      <Content Include="docs\extra\settings.md" />
+      <Content Include="docs\forms\main_window.md" />
+      <Content Include="docs\forms\views.md" />
+      <Content Include="docs\main.md" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
