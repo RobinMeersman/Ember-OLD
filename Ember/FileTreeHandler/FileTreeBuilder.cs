@@ -16,7 +16,7 @@ namespace Ember
                 root.Nodes.Add(node);
             }
         }
-        private static void DirectoriesLoader(TreeNode root, DirectoryInfo start) 
+        private static void ProcessDirs(TreeNode root, DirectoryInfo start) 
         {
             foreach (DirectoryInfo dir in start.GetDirectories())
             {
@@ -26,7 +26,7 @@ namespace Ember
                 {
                     if ((dir.Attributes & FileAttributes.NotContentIndexed) != FileAttributes.NotContentIndexed) // onzichtbaar, niet geindexeerde folder
                     {
-                        DirectoriesLoader(node, dir);
+                        ProcessDirs(node, dir);
                         foreach (FileInfo f in dir.GetFiles())
                         {
                             TreeNode t = new TreeNode(f.Name);
@@ -42,6 +42,8 @@ namespace Ember
                 root.Nodes.Add(node);
             }
         }
+        
+        // main function of this class
         public static TreeNode LoadFileTree(string path)
         {
             DirectoryInfo start = new DirectoryInfo(path);
@@ -49,7 +51,7 @@ namespace Ember
             if (start.GetDirectories().Length == 0 && start.GetFiles().Length == 0) return root;
             if (start.GetDirectories().Length != 0)
             {
-                DirectoriesLoader(root, start);
+                ProcessDirs(root, start);
             }
 
             if (start.GetFiles().Length != 0)

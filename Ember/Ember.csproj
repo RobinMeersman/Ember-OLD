@@ -85,6 +85,7 @@
       <Content Include="dev\wanted_features.txt" />
       <Content Include="docs\extra\classes.md" />
       <Content Include="docs\extra\classes\builder.md" />
+      <Content Include="docs\extra\classes\searcher.md" />
       <Content Include="docs\extra\settings.md" />
       <Content Include="docs\forms\main_window.md" />
       <Content Include="docs\forms\views.md" />
