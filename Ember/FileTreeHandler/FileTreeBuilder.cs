@@ -48,6 +48,7 @@ namespace Ember
         {
             DirectoryInfo start = new DirectoryInfo(path);
             TreeNode root = new TreeNode(start.Name);
+            root.Tag = start;
             if (start.GetDirectories().Length == 0 && start.GetFiles().Length == 0) return root;
             if (start.GetDirectories().Length != 0)
             {

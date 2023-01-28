@@ -72,13 +72,13 @@ namespace Ember
         private void fileTree_AfterSelect(object sender, TreeViewEventArgs e)
         {
             TreeNode selected = fileTree.SelectedNode;
-            if (selected.Nodes.Count > 0)
+            if (selected.Tag is DirectoryInfo)
             {
-                DirectoryInfo dir = (DirectoryInfo)selected.Tag;
+                DirectoryInfo dir = selected.Tag as DirectoryInfo;
                 sizeL.Text = dir.EnumerateFiles().Sum(f => f.Length).ToString();
                 return;
             }
-            FileInfo fInfo = (FileInfo)selected.Tag;
+            FileInfo fInfo = selected.Tag as FileInfo;
             sizeL.Text = fInfo.Length.ToString();
         }
         
