@@ -1,0 +1,20 @@
+﻿Wanted features:
+
+- show size of file/folder
+- show created at date (hour)
+- show owner of file/folder
+
+- Filetree loading asynchronous from ui
+
+rightclick menu:
+- Image?
+    - if yes --> show image in new window
+    - else --> open file with default app
+- rename file/folder
+- drag 'n drop moving of file(s)/folder(s)
+- delete file(s)/folder(s)
+- show properties
+
+FUTURE:
+- upload file to cloud storage? --> USER LOGIN INFO NEEDED (secure storage of info required)
+    - show network attached storage
