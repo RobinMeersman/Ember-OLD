@@ -2,10 +2,10 @@
 using System.IO;
 using System.Windows.Forms;
 
-namespace Ember
+namespace Ember.FileTreeHandler
 {
     // TODO: load tree in different thread to not block the ui
-    public static class FileTreeHandler
+    public static class FileTreeBuilder
     {
         private static void ProcessFiles(TreeNode root, DirectoryInfo start) 
         {

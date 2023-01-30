@@ -4,39 +4,46 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Ember.FileTreeHandler;
 
 namespace Ember
 {
+    // TODO: add splash screen at startup to wanted features
+    // TODO: remove dev/ from .gitignore
     public partial class Main : Form
     {
 
-        private ToolTip tp;
-        private Dictionary<Button, string> paths;
+        private ToolTip _tp;
+        private Dictionary<Button, string> _paths;
         public Main()
         {
-            tp = new ToolTip();
+            _tp = new ToolTip();
             InitializeComponent();
-            paths = new Dictionary<Button, string>();
+            _paths = new Dictionary<Button, string>();
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
-            StartPosition = FormStartPosition.CenterScreen;
+            // todo: not quit there yet :thinking:
+            StartPosition = FormStartPosition.Manual;
+            Location = new Point(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Y);
             sizeL.Text = "";
+            Width = Screen.PrimaryScreen.WorkingArea.Width;
+            Height = Screen.PrimaryScreen.WorkingArea.Height;
             sizeL.AutoSize = true;
 
-            paths[desktopBtn] = Properties.Settings.Default.desktop;
-            paths[imagesBtn] = Properties.Settings.Default.images;
-            paths[musicBtn] = Properties.Settings.Default.music;
-            paths[videosBtn] = Properties.Settings.Default.videos;
-            paths[documentsBtn] = Properties.Settings.Default.documents;
+            _paths[desktopBtn] = Properties.Settings.Default.desktop;
+            _paths[imagesBtn] = Properties.Settings.Default.images;
+            _paths[musicBtn] = Properties.Settings.Default.music;
+            _paths[videosBtn] = Properties.Settings.Default.videos;
+            _paths[documentsBtn] = Properties.Settings.Default.documents;
         }
 
         private void ClickHandler(object sender, EventArgs e)
         {
             fileTree.Nodes.Clear();
             Button btn = sender as Button;
-            fileTree.Nodes.Add(FileTreeHandler.LoadFileTree(paths[btn]));
+            fileTree.Nodes.Add(FileTreeBuilder.LoadFileTree(_paths[btn]));
         }
 
         private void leftBar_Paint(object sender, PaintEventArgs e)
@@ -102,7 +109,16 @@ namespace Ember
 
         private void fileTree_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button != MouseButtons.Right) return;
+            // if (e.Button != MouseButtons.Right) return;
+        }
+
+        private void fileTree_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            TreeNode node = fileTree.SelectedNode;
+            if (node.Tag is FileInfo)
+            {
+                // todo: use runner to start app with selected file
+            }
         }
     }
 }
