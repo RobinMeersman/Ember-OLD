@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 using Ember.FileTreeHandler;
 
 namespace Ember
 {
     // TODO: add splash screen at startup to wanted features
-    // TODO: remove dev/ from .gitignore
     public partial class Main : Form
     {
 
@@ -30,7 +28,7 @@ namespace Ember
             sizeL.Text = "";
             Width = Screen.PrimaryScreen.WorkingArea.Width;
             Height = Screen.PrimaryScreen.WorkingArea.Height;
-            sizeL.AutoSize = true;
+            sizeL.AutoSize = false;
 
             _paths[desktopBtn] = Properties.Settings.Default.desktop;
             _paths[imagesBtn] = Properties.Settings.Default.images;
@@ -79,14 +77,13 @@ namespace Ember
         private void fileTree_AfterSelect(object sender, TreeViewEventArgs e)
         {
             TreeNode selected = fileTree.SelectedNode;
-            if (selected.Tag is DirectoryInfo)
+            FileDir fD = selected.Tag as FileDir;
+            if (fD.getFileDirObject() is DirectoryInfo || fD.getFileDirObject() is FileInfo)
             {
-                DirectoryInfo dir = selected.Tag as DirectoryInfo;
-                sizeL.Text = dir.EnumerateFiles().Sum(f => f.Length).ToString();
-                return;
+                // DirectoryInfo dir = selected.Tag as DirectoryInfo;
+                // long size = dir.EnumerateFiles().Sum(f => f.Length);
+                sizeL.Text = $"{fD.getSize()/1_000_000} MB";
             }
-            FileInfo fInfo = selected.Tag as FileInfo;
-            sizeL.Text = fInfo.Length.ToString();
         }
         
         // todo: fix timing: becomes visible way to fast (low priority)
@@ -115,7 +112,8 @@ namespace Ember
         private void fileTree_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             TreeNode node = fileTree.SelectedNode;
-            if (node.Tag is FileInfo)
+            FileDir fD = node.Tag as FileDir;
+            if (fD.getFileDirObject() is FileInfo)
             {
                 // todo: use runner to start app with selected file
             }

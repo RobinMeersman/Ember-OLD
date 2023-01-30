@@ -5,6 +5,7 @@
 - show owner of file/folder
 
 - Filetree loading asynchronous from ui
+- Splash screen at startup
 
 rightclick menu:
 - Image?
@@ -18,3 +19,4 @@ rightclick menu:
 FUTURE:
 - upload file to cloud storage? --> USER LOGIN INFO NEEDED (secure storage of info required)
     - show network attached storage
+- settings
