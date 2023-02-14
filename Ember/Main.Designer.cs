@@ -67,9 +67,10 @@ namespace Ember
             this.leftBar.Controls.Add(this.imagesBtn);
             this.leftBar.Controls.Add(this.desktopBtn);
             this.leftBar.Controls.Add(this.leftTitle);
-            this.leftBar.Location = new System.Drawing.Point(3, 12);
+            this.leftBar.Location = new System.Drawing.Point(4, 15);
+            this.leftBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.leftBar.Name = "leftBar";
-            this.leftBar.Size = new System.Drawing.Size(201, 561);
+            this.leftBar.Size = new System.Drawing.Size(268, 690);
             this.leftBar.TabIndex = 0;
             this.leftBar.Paint += new System.Windows.Forms.PaintEventHandler(this.leftBar_Paint);
             // 
@@ -82,9 +83,10 @@ namespace Ember
             this.videosBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.videosBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.videosBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.videosBtn.Location = new System.Drawing.Point(0, 373);
+            this.videosBtn.Location = new System.Drawing.Point(0, 459);
+            this.videosBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.videosBtn.Name = "videosBtn";
-            this.videosBtn.Size = new System.Drawing.Size(198, 32);
+            this.videosBtn.Size = new System.Drawing.Size(264, 39);
             this.videosBtn.TabIndex = 5;
             this.videosBtn.Text = "Video";
             this.videosBtn.UseVisualStyleBackColor = true;
@@ -100,9 +102,10 @@ namespace Ember
             this.musicBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.musicBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.musicBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.musicBtn.Location = new System.Drawing.Point(0, 319);
+            this.musicBtn.Location = new System.Drawing.Point(0, 393);
+            this.musicBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.musicBtn.Name = "musicBtn";
-            this.musicBtn.Size = new System.Drawing.Size(198, 32);
+            this.musicBtn.Size = new System.Drawing.Size(264, 39);
             this.musicBtn.TabIndex = 4;
             this.musicBtn.Text = "Music";
             this.musicBtn.UseVisualStyleBackColor = false;
@@ -117,9 +120,10 @@ namespace Ember
             this.documentsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.documentsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.documentsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.documentsBtn.Location = new System.Drawing.Point(0, 266);
+            this.documentsBtn.Location = new System.Drawing.Point(0, 327);
+            this.documentsBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.documentsBtn.Name = "documentsBtn";
-            this.documentsBtn.Size = new System.Drawing.Size(198, 32);
+            this.documentsBtn.Size = new System.Drawing.Size(264, 39);
             this.documentsBtn.TabIndex = 3;
             this.documentsBtn.Text = "Documents";
             this.documentsBtn.UseVisualStyleBackColor = true;
@@ -134,9 +138,10 @@ namespace Ember
             this.imagesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.imagesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.imagesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.imagesBtn.Location = new System.Drawing.Point(0, 214);
+            this.imagesBtn.Location = new System.Drawing.Point(0, 263);
+            this.imagesBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.imagesBtn.Name = "imagesBtn";
-            this.imagesBtn.Size = new System.Drawing.Size(198, 32);
+            this.imagesBtn.Size = new System.Drawing.Size(264, 39);
             this.imagesBtn.TabIndex = 2;
             this.imagesBtn.Text = "Images";
             this.imagesBtn.UseVisualStyleBackColor = true;
@@ -153,9 +158,10 @@ namespace Ember
             this.desktopBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.desktopBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.desktopBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.desktopBtn.Location = new System.Drawing.Point(0, 163);
+            this.desktopBtn.Location = new System.Drawing.Point(0, 201);
+            this.desktopBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.desktopBtn.Name = "desktopBtn";
-            this.desktopBtn.Size = new System.Drawing.Size(198, 32);
+            this.desktopBtn.Size = new System.Drawing.Size(264, 39);
             this.desktopBtn.TabIndex = 1;
             this.desktopBtn.Text = "Desktop";
             this.desktopBtn.UseVisualStyleBackColor = false;
@@ -167,8 +173,9 @@ namespace Ember
             this.leftTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(97)))), ((int)(((byte)(0)))));
             this.leftTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.leftTitle.Location = new System.Drawing.Point(0, 0);
+            this.leftTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.leftTitle.Name = "leftTitle";
-            this.leftTitle.Size = new System.Drawing.Size(182, 33);
+            this.leftTitle.Size = new System.Drawing.Size(243, 41);
             this.leftTitle.TabIndex = 0;
             this.leftTitle.Text = "Shortcuts       ";
             this.leftTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -179,9 +186,10 @@ namespace Ember
             this.infoPanel.BackColor = System.Drawing.Color.Transparent;
             this.infoPanel.Controls.Add(this.sizeL);
             this.infoPanel.Controls.Add(this.label2);
-            this.infoPanel.Location = new System.Drawing.Point(12, 572);
+            this.infoPanel.Location = new System.Drawing.Point(16, 704);
+            this.infoPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.infoPanel.Name = "infoPanel";
-            this.infoPanel.Size = new System.Drawing.Size(1026, 36);
+            this.infoPanel.Size = new System.Drawing.Size(1368, 44);
             this.infoPanel.TabIndex = 1;
             this.infoPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -189,9 +197,10 @@ namespace Ember
             // 
             this.sizeL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.sizeL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sizeL.Location = new System.Drawing.Point(59, 5);
+            this.sizeL.Location = new System.Drawing.Point(79, 6);
+            this.sizeL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sizeL.Name = "sizeL";
-            this.sizeL.Size = new System.Drawing.Size(133, 25);
+            this.sizeL.Size = new System.Drawing.Size(177, 31);
             this.sizeL.TabIndex = 1;
             this.sizeL.Text = "3";
             this.sizeL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -200,9 +209,10 @@ namespace Ember
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 4);
+            this.label2.Location = new System.Drawing.Point(15, 5);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 25);
+            this.label2.Size = new System.Drawing.Size(56, 31);
             this.label2.TabIndex = 0;
             this.label2.Text = "size:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -212,9 +222,10 @@ namespace Ember
             this.fileTree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.fileTree.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
             this.fileTree.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fileTree.Location = new System.Drawing.Point(210, 53);
+            this.fileTree.Location = new System.Drawing.Point(280, 65);
+            this.fileTree.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fileTree.Name = "fileTree";
-            this.fileTree.Size = new System.Drawing.Size(827, 513);
+            this.fileTree.Size = new System.Drawing.Size(1101, 630);
             this.fileTree.TabIndex = 2;
             this.fileTree.NodeMouseHover += new System.Windows.Forms.TreeNodeMouseHoverEventHandler(this.fileTree_NodeMouseHover);
             this.fileTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.fileTree_AfterSelect);
@@ -224,9 +235,10 @@ namespace Ember
             // panel1
             // 
             this.panel1.Controls.Add(this.searchBox);
-            this.panel1.Location = new System.Drawing.Point(210, 15);
+            this.panel1.Location = new System.Drawing.Point(280, 18);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(826, 29);
+            this.panel1.Size = new System.Drawing.Size(1101, 36);
             this.panel1.TabIndex = 3;
             // 
             // searchBox
@@ -234,25 +246,27 @@ namespace Ember
             this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right)));
             this.searchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
             this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.searchBox.Location = new System.Drawing.Point(420, 3);
+            this.searchBox.Location = new System.Drawing.Point(560, 4);
             this.searchBox.Margin = new System.Windows.Forms.Padding(0);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(406, 13);
+            this.searchBox.Size = new System.Drawing.Size(541, 15);
             this.searchBox.TabIndex = 0;
             this.searchBox.Text = "Search";
             this.searchBox.WordWrap = false;
+            this.searchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchBox_KeyDown);
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
-            this.ClientSize = new System.Drawing.Size(1050, 608);
+            this.ClientSize = new System.Drawing.Size(1400, 748);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.fileTree);
             this.Controls.Add(this.infoPanel);
             this.Controls.Add(this.leftBar);
             this.Location = new System.Drawing.Point(15, 15);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Main";
             this.Text = "Ember Filemanager";
             this.Load += new System.EventHandler(this.Main_Load);

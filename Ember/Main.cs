@@ -13,6 +13,7 @@ namespace Ember
 
         private ToolTip _tp;
         private Dictionary<Button, string> _paths;
+        private TreeNode root;
         public Main()
         {
             _tp = new ToolTip();
@@ -42,6 +43,7 @@ namespace Ember
             fileTree.Nodes.Clear();
             Button btn = sender as Button;
             fileTree.Nodes.Add(FileTreeBuilder.LoadFileTree(_paths[btn]));
+            root = fileTree.Nodes[0];
         }
 
         private void leftBar_Paint(object sender, PaintEventArgs e)
@@ -68,9 +70,9 @@ namespace Ember
 
         private void searchBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter && root != null)
             {
-                // todo: implement
+                FileTreeSearcher.Search(root, searchBox.Text, fileTree);
             }
         }
 
