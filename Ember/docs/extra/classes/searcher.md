@@ -20,6 +20,9 @@ Parameters:
 - `name` (string): the file/folder which is searched after
 - `tree` (TreeView): the container
 
+When the search results in a null value, a messagebox will be showed telling the user
+nothing has been found.
+
 ## Helper-methods
 ```csharp
 private static TreeNode SearchRecurse(TreeNode root, string name)
@@ -28,7 +31,8 @@ private static TreeNode SearchRecurse(TreeNode root, string name)
 }
 ```
 The recursive functions which computes the correct node, or `null` if no node containing the
-searched name in the tree.
+searched name in the tree. Returns the correct node, or null if no 
+node containing `name` has been found
 
 ```csharp
 private static void replaceTree(TreeView tree, TreeNode root)
