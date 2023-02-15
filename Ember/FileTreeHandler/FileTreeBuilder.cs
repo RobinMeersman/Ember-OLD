@@ -17,7 +17,6 @@ namespace Ember.FileTreeHandler
                 root.Nodes.Add(node);
                 size += file.Length;
             }
-
             return size;
         }
         private static long ProcessDirs(TreeNode root, DirectoryInfo start)
@@ -29,7 +28,8 @@ namespace Ember.FileTreeHandler
                 TreeNode node = new TreeNode(dir.Name);
                 try
                 {
-                    if ((dir.Attributes & FileAttributes.NotContentIndexed) != FileAttributes.NotContentIndexed) // onzichtbaar, niet geindexeerde folder
+                    // invisible, non-indexed folder
+                    if ((dir.Attributes & FileAttributes.NotContentIndexed) != FileAttributes.NotContentIndexed)
                     {
                         sum += ProcessDirs(node, dir);
                         foreach (FileInfo f in dir.GetFiles())

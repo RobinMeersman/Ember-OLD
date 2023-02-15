@@ -20,15 +20,21 @@ namespace Ember.FileTreeHandler
                 tree.SelectedNode = node;
             }
         }
-        private static void replaceTree(TreeView tree, TreeNode root)
+        private static void ReplaceTree(TreeView tree, TreeNode root)
         {
             if (root == null) return;
             tree.Nodes.Clear();
             tree.Nodes.Add(root);
         }
 
+        public static TreeNode TestSearch(TreeNode root, string name)
+        {
+            return SearchRecurse(root, name);
+        }
+
         private static TreeNode SearchRecurse(TreeNode root, string name)
         {
+            if (root == null || name == "") return null;
             if (root.Text == name) return root;
             foreach (TreeNode child in root.Nodes)
             {
