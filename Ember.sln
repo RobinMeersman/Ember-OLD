@@ -2,6 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ember", "Ember\Ember.csproj", "{B0525876-8964-4D56-89F3-4ABADBF5C62A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchTest", "SearchTest\SearchTest.csproj", "{B68F3EAD-F82A-4526-A279-C1D028B8E435}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B0525876-8964-4D56-89F3-4ABADBF5C62A} = {B0525876-8964-4D56-89F3-4ABADBF5C62A}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +17,9 @@ Global
 		{B0525876-8964-4D56-89F3-4ABADBF5C62A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0525876-8964-4D56-89F3-4ABADBF5C62A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0525876-8964-4D56-89F3-4ABADBF5C62A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B68F3EAD-F82A-4526-A279-C1D028B8E435}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B68F3EAD-F82A-4526-A279-C1D028B8E435}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B68F3EAD-F82A-4526-A279-C1D028B8E435}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B68F3EAD-F82A-4526-A279-C1D028B8E435}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
