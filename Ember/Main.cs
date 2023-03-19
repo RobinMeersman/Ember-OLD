@@ -84,7 +84,17 @@ namespace Ember
             {
                 // DirectoryInfo dir = selected.Tag as DirectoryInfo;
                 // long size = dir.EnumerateFiles().Sum(f => f.Length);
-                sizeL.Text = $"{fD.getSize()/1_000_000} MB";
+                long size = fD.getSize();
+                int i = 0;
+                string[] units = { "B", "KB", "MB", "GB", "TB" };
+                while (size > 1000)
+                {
+                    i++;
+                    size /= 1000;
+                }
+
+                if (i > units.Length - 1) i = units.Length - 1;
+                sizeL.Text = $"{(float) size}{units[i]}";
             }
         }
         
