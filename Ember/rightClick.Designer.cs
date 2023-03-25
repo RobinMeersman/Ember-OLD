@@ -126,7 +126,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.TopMost = true;
             this.Load += new System.EventHandler(this.rightClick_Load);
-            this.Leave += new System.EventHandler(this.rightClick_Leave);
             this.ResumeLayout(false);
         }
 

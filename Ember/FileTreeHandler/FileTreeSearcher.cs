@@ -6,6 +6,7 @@ namespace Ember.FileTreeHandler
     {
         public static void Search(TreeNode root, string name, TreeView tree)
         {
+            // todo: maybe convert recursive function to iterative (big fileSystems can cause stackoverflow error)
             TreeNode node = SearchRecurse(root, name);
             if (node != null)
             {

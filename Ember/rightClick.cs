@@ -14,12 +14,14 @@ namespace Ember
     public partial class rightClick : Form
     {
         private const float _scaling = 1.2f;
+        private bool isVisible;
 
         private FileDir fD;
         public rightClick(FileDir obj)
         {
             InitializeComponent();
             fD = obj;
+            isVisible = false;
         }
 
         private void rightClick_Load(object sender, EventArgs e)
@@ -29,11 +31,6 @@ namespace Ember
             Height = (int)(Height * _scaling);
         }
 
-        private void rightClick_Leave(object sender, EventArgs e)
-        {
-            Hide();
-        }
-        
         // todo: find a way to use default apps to open files
         private void openBtn_Click(object sender, EventArgs e)
         {
@@ -61,18 +58,34 @@ namespace Ember
         // todo: delete the file/ folder
         private void button1_Click(object sender, EventArgs e)
         {
+            FileSystemInfo info;
             if (fD.getFileDirObject() is FileInfo)
             {
-                FileInfo f = fD.getFileDirObject() as FileInfo;
-                
-                // todo: show messageBox (for now) with information of the file/folder
-                return;
+                info = fD.getFileDirObject() as FileInfo;
             }
+            else
+            {
+                info = fD.getFileDirObject() as DirectoryInfo;
+            }
+            
+            // todo: show messageBox (for now) with information of the file/folder
         }
 
         private void propertiesBtn_Click(object sender, EventArgs e)
         {
             throw new System.NotImplementedException();
+        }
+
+        public bool withinBounds(Point p)
+        {
+            int x = p.X, y = p.Y;
+            return x >= Location.X && x <= Location.X + Size.Width && y >= Location.Y && y <= Location.Y + Size.Height;
+        }
+
+        public void CloseSelf()
+        {
+            Console.WriteLine("Closing the form");
+            Close();
         }
     }
 }

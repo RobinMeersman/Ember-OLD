@@ -118,11 +118,18 @@ namespace Ember
 
         private void fileTree_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button != MouseButtons.Right) return;
-
             rightClick menu = new rightClick(fileTree.SelectedNode.Tag as FileDir);
-            menu.SetDesktopLocation(Cursor.Position.X, Cursor.Position.Y);
-            menu.Show(this);
+            if (e.Button == MouseButtons.Right)
+            {
+                menu.SetDesktopLocation(Cursor.Position.X, Cursor.Position.Y);
+                menu.Show(this);
+                return;
+            }
+
+            if (e.Button == MouseButtons.Left && !menu.withinBounds(Cursor.Position))
+            {
+                menu.CloseSelf();
+            }
         }
 
         private void fileTree_MouseDoubleClick(object sender, MouseEventArgs e)
