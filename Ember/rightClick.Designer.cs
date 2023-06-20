@@ -1,4 +1,6 @@
-﻿namespace Ember
+﻿using System.Windows.Forms;
+
+namespace Ember
 {
     partial class rightClick
     {
@@ -126,6 +128,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.TopMost = true;
             this.Load += new System.EventHandler(this.rightClick_Load);
+            this.MouseClick += new MouseEventHandler(this.rightClick_MouseClick);
             this.ResumeLayout(false);
         }
 

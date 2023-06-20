@@ -14,14 +14,14 @@ namespace Ember
     public partial class rightClick : Form
     {
         private const float _scaling = 1.2f;
-        private bool isVisible;
 
         private FileDir fD;
+        private bool isVisibleVar;
         public rightClick(FileDir obj)
         {
             InitializeComponent();
             fD = obj;
-            isVisible = false;
+            isVisibleVar = false;
         }
 
         private void rightClick_Load(object sender, EventArgs e)
@@ -67,7 +67,7 @@ namespace Ember
             {
                 info = fD.getFileDirObject() as DirectoryInfo;
             }
-            
+            throw new System.NotImplementedException();
             // todo: show messageBox (for now) with information of the file/folder
         }
 
@@ -76,16 +76,20 @@ namespace Ember
             throw new System.NotImplementedException();
         }
 
-        public bool withinBounds(Point p)
+        private bool withinBounds(Point p)
         {
             int x = p.X, y = p.Y;
             return x >= Location.X && x <= Location.X + Size.Width && y >= Location.Y && y <= Location.Y + Size.Height;
         }
 
-        public void CloseSelf()
+        private void rightClick_MouseClick(object sender, MouseEventArgs e)
         {
-            Console.WriteLine("Closing the form");
-            Close();
+            string info = $"{e.Location.ToString()} is not within {e.Location.ToString()}";
+            MessageBox.Show("Info", info, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (!withinBounds(e.Location))
+            {
+                Hide();
+            }
         }
     }
 }
